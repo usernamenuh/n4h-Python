@@ -48,11 +48,15 @@ def app_ujian():
             jawaban = soal["jawaban"][j]
             print(opsi[j], ".", jawaban)
             
+        try:
+            jawaban_user = input("Masukkan jawaban Anda (A/B/C/D): ")
+            jawaban_user_index = opsi.index(jawaban_user)
+            jawaban_asli_user = soal["jawaban"][jawaban_user_index]
+        except (ValueError, IndexError):
+            print("Input tidak valid. Jawaban dianggap salah.")
+            jawaban_asli_user = None
             
-        jawaban_user = input("Masukkan jawaban Anda (A/B/C/D): ")
-        jawaban_user_index = opsi.index(jawaban_user)
-        jawaban_asli_user = soal["jawaban"][jawaban_user_index]
-        
+            
         if jawaban_asli_user == soal["jawaban_benar"]:
             print("Jawaban Anda benar!")
             jawaban_benar += 1
