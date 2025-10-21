@@ -56,7 +56,7 @@ def app_ujian():
             print("Input tidak valid. Jawaban dianggap salah.")
             jawaban_asli_user = None
             
-            
+            3444
         if jawaban_asli_user == soal["jawaban_benar"]:
             print("Jawaban Anda benar!")
             jawaban_benar += 1
